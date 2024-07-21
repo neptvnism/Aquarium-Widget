@@ -17,13 +17,13 @@
         .aquarium {
             width: 80%;
             height: 60%;
-            background-color: #1E90FF; /* Water blue */
+            background-color: #add8e6; /* Lighter water blue */
             border: 5px solid #1C6EA4;
             border-radius: 20px;
             position: relative;
             overflow: hidden;
         }
-        .fish, .plant, .bubble {
+        .fish, .plant, .bubble, .creature {
             position: absolute;
             font-size: 2rem;
         }
@@ -31,7 +31,7 @@
             animation: swim 10s linear infinite;
         }
         @keyframes swim {
-            0% { left: -5%; }
+            0% { left: -10%; }
             100% { left: 100%; }
         }
         .plant {
@@ -39,11 +39,19 @@
         }
         .bubble {
             animation: rise 5s ease-in infinite;
-            font-size: 1rem;
+            font-size: 1.5rem;
         }
         @keyframes rise {
             0% { bottom: 0; opacity: 1; }
             100% { bottom: 100%; opacity: 0; }
+        }
+        .creature {
+            animation: float 8s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
         }
     </style>
 </head>
@@ -52,12 +60,17 @@
         <div class="fish" style="top: 30%; left: 10%;">🐠</div>
         <div class="fish" style="top: 50%; left: 20%;">🐟</div>
         <div class="fish" style="top: 70%; left: 0%;">🐡</div>
+        <div class="creature" style="top: 20%; left: 40%;">🐙</div>
+        <div class="creature" style="top: 60%; left: 60%;">🦑</div>
+        <div class="creature" style="top: 40%; left: 80%;">🦀</div>
         <div class="plant" style="left: 5%;">🌿</div>
         <div class="plant" style="left: 20%;">🌿</div>
         <div class="plant" style="left: 35%;">🌿</div>
-        <div class="bubble" style="left: 25%; animation-delay: 0s;">💧</div>
-        <div class="bubble" style="left: 50%; animation-delay: 1s;">💧</div>
-        <div class="bubble" style="left: 75%; animation-delay: 2s;">💧</div>
+        <div class="bubble" style="left: 25%; animation-delay: 0s;">🔵</div>
+        <div class="bubble" style="left: 50%; animation-delay: 1s;">🔵</div>
+        <div class="bubble" style="left: 75%; animation-delay: 2s;">🔵</div>
+        <div class="bubble" style="left: 10%; animation-delay: 3s;">🔵</div>
+        <div class="bubble" style="left: 65%; animation-delay: 4s;">🔵</div>
     </div>
 </body>
 </html>
