@@ -16,30 +16,31 @@
         }
         .aquarium {
             width: 80%;
-            height: 60%;
+            height: 80%;
             background-color: #add8e6; /* Lighter water blue */
             border: 5px solid #1C6EA4;
             border-radius: 20px;
             position: relative;
             overflow: hidden;
         }
-        .fish, .plant, .bubble, .creature {
+        .fish, .plant, .bubble, .creature, .crab {
             position: absolute;
-            font-size: 2rem;
+            font-size: 4rem;
         }
         .fish {
-            animation: swim 10s linear infinite;
+            animation: swim 10s linear infinite alternate;
         }
         @keyframes swim {
-            0% { left: -10%; }
-            100% { left: 100%; }
+            0% { transform: translateX(-10%); }
+            100% { transform: translateX(100%); }
         }
         .plant {
             bottom: 0;
+            font-size: 6rem;
         }
         .bubble {
             animation: rise 5s ease-in infinite;
-            font-size: 1.5rem;
+            font-size: 3rem;
         }
         @keyframes rise {
             0% { bottom: 0; opacity: 1; }
@@ -50,27 +51,36 @@
         }
         @keyframes float {
             0% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-40px); }
             100% { transform: translateY(0); }
+        }
+        .crab {
+            bottom: 0;
+            animation: moveSide 6s linear infinite alternate;
+        }
+        @keyframes moveSide {
+            0% { left: 0; }
+            100% { left: 80%; }
         }
     </style>
 </head>
 <body>
     <div class="aquarium">
-        <div class="fish" style="top: 30%; left: 10%;">🐠</div>
+        <div class="fish" style="top: 20%; left: 10%;">🐠</div>
         <div class="fish" style="top: 50%; left: 20%;">🐟</div>
         <div class="fish" style="top: 70%; left: 0%;">🐡</div>
-        <div class="creature" style="top: 20%; left: 40%;">🐙</div>
-        <div class="creature" style="top: 60%; left: 60%;">🦑</div>
-        <div class="creature" style="top: 40%; left: 80%;">🦀</div>
+        <div class="creature" style="top: 30%; left: 40%;">🦑</div>
+        <div class="creature" style="top: 60%; left: 60%;">🐢</div>
         <div class="plant" style="left: 5%;">🌿</div>
         <div class="plant" style="left: 20%;">🌿</div>
         <div class="plant" style="left: 35%;">🌿</div>
-        <div class="bubble" style="left: 25%; animation-delay: 0s;">🔵</div>
-        <div class="bubble" style="left: 50%; animation-delay: 1s;">🔵</div>
-        <div class="bubble" style="left: 75%; animation-delay: 2s;">🔵</div>
-        <div class="bubble" style="left: 10%; animation-delay: 3s;">🔵</div>
-        <div class="bubble" style="left: 65%; animation-delay: 4s;">🔵</div>
+        <div class="crab" style="left: 10%;">🦀</div>
+        <div class="crab" style="left: 50%;">🦀</div>
+        <div class="bubble" style="left: 25%; animation-delay: 0s;">🫧</div>
+        <div class="bubble" style="left: 50%; animation-delay: 1s;">🫧</div>
+        <div class="bubble" style="left: 75%; animation-delay: 2s;">🫧</div>
+        <div class="bubble" style="left: 10%; animation-delay: 3s;">🫧</div>
+        <div class="bubble" style="left: 65%; animation-delay: 4s;">🫧</div>
     </div>
 </body>
 </html>
