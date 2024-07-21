@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Aquarium</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #87CEEB; /* Sky blue background */
+            margin: 0;
+        }
+        .aquarium {
+            width: 80%;
+            height: 60%;
+            background-color: #1E90FF; /* Water blue */
+            border: 5px solid #1C6EA4;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .fish, .plant, .bubble {
+            position: absolute;
+            font-size: 2rem;
+        }
+        .fish {
+            animation: swim 10s linear infinite;
+        }
+        @keyframes swim {
+            0% { left: -5%; }
+            100% { left: 100%; }
+        }
+        .plant {
+            bottom: 0;
+        }
+        .bubble {
+            animation: rise 5s ease-in infinite;
+            font-size: 1rem;
+        }
+        @keyframes rise {
+            0% { bottom: 0; opacity: 1; }
+            100% { bottom: 100%; opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="aquarium">
+        <div class="fish" style="top: 30%; left: 10%;">🐠</div>
+        <div class="fish" style="top: 50%; left: 20%;">🐟</div>
+        <div class="fish" style="top: 70%; left: 0%;">🐡</div>
+        <div class="plant" style="left: 5%;">🌿</div>
+        <div class="plant" style="left: 20%;">🌿</div>
+        <div class="plant" style="left: 35%;">🌿</div>
+        <div class="bubble" style="left: 25%; animation-delay: 0s;">💧</div>
+        <div class="bubble" style="left: 50%; animation-delay: 1s;">💧</div>
+        <div class="bubble" style="left: 75%; animation-delay: 2s;">💧</div>
+    </div>
+</body>
+</html>
